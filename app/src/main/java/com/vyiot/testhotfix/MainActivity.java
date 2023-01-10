@@ -6,13 +6,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.vyiot.hotfix.HotFixManager;
 import com.vyiot.hotfix.utils.PathUtil;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "wnwnwang";
     private HotFixDownloadImp download;
+    private EditText mEt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mEt = findViewById(R.id.et);
+
         Button btn = findViewById(R.id.btn);
         btn.setOnClickListener(v -> {
             downLoadPatch();
@@ -47,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnShow = findViewById(R.id.btn_show);
         btnShow.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, "你好啊，哈哈哈", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Hello world", Toast.LENGTH_SHORT).show();
         });
 
         Button md5 = findViewById(R.id.btn_md5);
@@ -62,14 +68,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void downLoadPatch() {
-        String value = "123_27e6bd540b257319baf9fa5eddcf685b";
+        String value = mEt.getText().toString();
+        if (TextUtils.isEmpty(value)) {
+            Log.e(TAG, "value is empty");
+            return;
+        }
         HotFixManager.getInstance().downloadPatch(download, value);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e("wnwnwang", "HotFixActivity onDestroy");
+        Log.e(TAG, "HotFixActivity onDestroy");
     }
 
     private void killApp() {
