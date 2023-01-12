@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestHotfix</string>
+
+    <string name="app_slogan">让流量更有价值</string>
 </resources>
