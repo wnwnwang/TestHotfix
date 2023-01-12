@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnShow = findViewById(R.id.btn_show);
         btnShow.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, "嘻嘻嘻嘿嘿嘿！！！", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "德玛西亚！！！", Toast.LENGTH_SHORT).show();
         });
 
         Button md5 = findViewById(R.id.btn_md5);
