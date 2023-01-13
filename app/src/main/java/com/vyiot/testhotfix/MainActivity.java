@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         download.setOnFileLoadListener(new HotFixDownloadImp.OnFileLoadListener() {
             @Override
             public void onSuccess() {
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "下载补丁成功", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "下载补丁成功了！！！", Toast.LENGTH_SHORT).show());
             }
 
             @Override
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnShow = findViewById(R.id.btn_show);
         btnShow.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, "天呢，还有这种好事！！！", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "哈哈哈！！！", Toast.LENGTH_SHORT).show();
         });
 
         Button md5 = findViewById(R.id.btn_md5);
